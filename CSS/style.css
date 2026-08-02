@@ -1,0 +1,402 @@
+*{
+
+    box-sizing:border-box;
+
+}
+
+body{
+
+    margin:0;
+
+    padding:0;
+
+    background:#1b1b1b;
+
+    color:white;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+}
+
+.app{
+
+    max-width:500px;
+
+    margin:auto;
+
+    min-height:100vh;
+
+    padding:20px;
+
+}
+
+header{
+
+    text-align:center;
+
+    margin-bottom:30px;
+
+}
+
+h1{
+
+    margin:0;
+
+    font-size:36px;
+
+}
+
+.subtitle{
+
+    margin-top:8px;
+
+    color:#bbbbbb;
+
+    font-size:16px;
+
+}
+
+.screen{
+
+    width:100%;
+
+}
+
+.menuButton{
+
+    width:100%;
+
+    padding:18px;
+
+    margin-bottom:15px;
+
+    font-size:22px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+}
+
+.menuButton:hover{
+
+    opacity:0.9;
+
+}
+
+.backButton{
+
+    width:100%;
+
+    padding:14px;
+
+    margin-bottom:20px;
+
+    font-size:18px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+}
+
+.card{
+
+    background:#2a2a2a;
+
+    border-radius:10px;
+
+    padding:20px;
+
+}
+
+.inputGroup{
+
+    margin-bottom:18px;
+
+}
+
+.inputGroup label{
+
+    display:block;
+
+    margin-bottom:6px;
+
+    font-size:16px;
+
+}
+
+.inputGroup input{
+
+    width:100%;
+
+    padding:12px;
+
+    font-size:18px;
+
+    border-radius:8px;
+
+    border:none;
+
+}
+
+.inputGroup select{
+
+    width:100%;
+
+    padding:12px;
+
+    font-size:18px;
+
+    border-radius:8px;
+
+    border:none;
+
+}
+
+.calcButton{
+
+    width:100%;
+
+    padding:12px;
+
+    font-size:18px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+}
+
+.result{
+
+    margin-top:25px;
+
+    padding:20px;
+
+    background:#111111;
+
+    border-radius:10px;
+
+    text-align:center;
+
+    font-size:30px;
+
+    font-weight:bold;
+
+}
+
+.smallText{
+
+    font-size:14px;
+
+    color:#bbbbbb;
+
+    margin-top:10px;
+
+}
+
+@media (max-width:500px){
+
+    .app{
+
+        padding:15px;
+
+    }
+
+    h1{
+
+        font-size:30px;
+
+    }
+
+    .menuButton{
+
+        font-size:20px;
+
+    }
+
+    .calcButton{
+
+        font-size:20px;
+
+    }
+
+}
+
+.menuButton{
+
+    width:100%;
+
+    padding:18px;
+
+    margin-bottom:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    text-align:center;
+
+}
+
+.menuTitle{
+
+    display:block;
+
+    font-size:24px;
+
+    font-weight:bold;
+
+}
+
+.menuSubTitle{
+
+    display:block;
+
+    margin-top:6px;
+
+    font-size:15px;
+
+}
+
+/* =====================================
+   共通クラス
+===================================== */
+
+.hidden{
+
+    display:none;
+
+}
+
+.left{
+
+    text-align:left;
+
+}
+
+.center{
+
+    text-align:center;
+
+}
+
+.right{
+
+    text-align:right;
+
+}
+
+
+/* ---------- 幅 ---------- */
+
+.w60{
+
+    width:60px;
+
+}
+
+.w70{
+
+    width:70px;
+
+}
+
+.w80{
+
+    width:80px;
+
+}
+
+.w90{
+
+    width:90px;
+
+}
+
+.w100{
+
+    width:100px;
+
+}
+
+.w120{
+
+    width:120px;
+
+}
+
+.w230{
+
+    width:230px;
+
+}
+
+.w100p{
+
+    width:100%;
+
+}
+
+
+/* ---------- 余白 ---------- */
+
+.mt10{
+
+    margin-top:10px;
+
+}
+
+.mb10{
+
+    margin-bottom:10px;
+
+}
+
+.ml6{
+
+    margin-left:6px;
+
+}
+
+
+/* ---------- テーブル ---------- */
+
+.resultTable{
+
+    width:100%;
+
+}
+
+.resultRight{
+
+    text-align:right;
+
+}
+
+
+/* ---------- 文字 ---------- */
+
+.resultLarge{
+
+    font-size:28px;
+
+}
+
+.red{
+
+    color:red;
+
+}

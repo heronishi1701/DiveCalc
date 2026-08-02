@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Dive Calc</title>
+
+    <link
+        rel="stylesheet"
+        href="css/style.css">
+
+    <link rel="manifest" href="manifest.json">
+
+    <meta name="theme-color" content="#1b1b1b">
+
+    <link rel="apple-touch-icon" href="img/icon-192.png">
+
+</head>
+
+<body>
+
+    <div class="app">
+
+        <header>
+
+            <h1>Diving Calculator</h1>
+
+            <p class="subtitle">
+                ダイビング用計算機
+            </p>
+
+        </header>
+
+        <main>
+
+            <div
+                id="menuScreen"
+                class="screen">
+
+        <button
+            class="menuButton"
+            onclick="showSacCalculator()">
+
+            <span class="menuTitle">
+                SAC Calculator
+            </span>
+
+            <span class="menuSubTitle">
+                分間空気消費量
+            </span>
+
+        </button>
+
+        <button
+            class="menuButton"
+            onclick="showModCalculator()">
+
+            <span class="menuTitle">
+                MOD Calculator
+            </span>
+
+            <span class="menuSubTitle">
+                エンリッチドエア最大深度
+            </span>
+
+        </button>
+
+        <button
+            class="menuButton"
+            onclick="showBestMixCalculator()">
+
+            <span class="menuTitle">
+                Best Mix
+            </span>
+
+            <span class="menuSubTitle">
+                ベストミックス
+            </span>
+
+        </button>
+
+            </div>
+
+
+
+            <div
+                id="calculatorScreen"
+                class="screen"
+                style="display:none;">
+
+                <div id="calculatorArea">
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+    <script src="js/dive.min.js"></script>
+
+<script>
+
+if("serviceWorker" in navigator){
+
+    window.addEventListener(
+
+        "load",
+
+        () => {
+
+            navigator.serviceWorker.register(
+
+                "./service-worker.js"
+
+            );
+
+        }
+
+    );
+
+}
+
+</script>
+
+</body>
+
+</html>
