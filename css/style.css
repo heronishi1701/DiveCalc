@@ -80,7 +80,7 @@ h1{
     border-radius:10px;
 
     cursor:pointer;
-    
+
     text-align:center;
 
 }
@@ -691,5 +691,33 @@ h1{
 .appFooter p{
 
     margin:2px 0;
+
+}
+
+.aboutApp{
+
+    width:90%;
+
+    max-width:520px;
+
+    margin:30px auto;
+
+    text-align:left;
+
+}
+
+.aboutApp h2{
+
+    text-align:center;
+
+    margin-bottom:16px;
+
+}
+
+.aboutApp p{
+
+    line-height:1.7;
+
+    margin-bottom:14px;
 
 }
