@@ -1,6 +1,6 @@
 {
-    "name": "Dive Calc",
-    "short_name": "Dive Calc",
+    "name": "ダイビング計算機",
+    "short_name": "ダイビング計算機",
     "description": "Scuba Diving Calculator",
     "start_url": "./",
     "display": "standalone",

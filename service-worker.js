@@ -1,4 +1,4 @@
-const CACHE_NAME = "divecalc-v3";
+const CACHE_NAME = "divecalc-v4";
 
 const urlsToCache = [
 
@@ -61,47 +61,52 @@ self.addEventListener("activate", event => {
 // 通信
 self.addEventListener("fetch", event => {
 
-    if(event.request.method !== "GET"){
-
-        return;
-
-    }
+    if (event.request.method !== "GET") return;
 
     event.respondWith(
 
-        caches.match(event.request)
+        caches.match(event.request).then(cachedResponse => {
 
-            .then(response => {
+            if (cachedResponse) {
 
-                if(response){
+                return cachedResponse;
 
-                    return response;
+            }
 
-                }
+            return fetch(event.request)
 
-                return fetch(event.request)
+                .then(networkResponse => {
 
-                    .then(networkResponse => {
+                    if (
+                        !networkResponse ||
+                        networkResponse.status !== 200
+                    ) {
+                        return networkResponse;
+                    }
 
-                        return caches.open(CACHE_NAME)
+                    const responseClone = networkResponse.clone();
 
-                            .then(cache => {
+                    caches.open(CACHE_NAME).then(cache => {
 
-                                cache.put(
-
-                                    event.request,
-
-                                    networkResponse.clone()
-
-                                );
-
-                                return networkResponse;
-
-                            });
+                        cache.put(event.request, responseClone);
 
                     });
 
-            })
+                    return networkResponse;
+
+                })
+
+                .catch(() => {
+
+                    if (event.request.mode === "navigate") {
+
+                        return caches.match("./index.html");
+
+                    }
+
+                });
+
+        })
 
     );
 
