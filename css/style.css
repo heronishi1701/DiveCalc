@@ -716,8 +716,82 @@ h1{
 
 .aboutApp p{
 
-    line-height:1.7;
+    font-size:14px;
+
+    line-height:1.8;
 
     margin-bottom:14px;
+
+}
+
+.computerBrand{
+
+    text-align:left;
+
+    margin-top:25px;
+
+    margin-bottom:12px;
+
+    font-size:22px;
+
+    font-weight:bold;
+
+}
+
+.linkButton{
+
+    display:block;
+
+    width:100%;
+
+    box-sizing:border-box;
+
+    padding:18px;
+
+    margin-top:12px;
+
+    margin-bottom:12px;
+
+    border-radius:12px;
+
+    background:#ececec;
+
+    color:#000;
+
+    text-align:center;
+
+    text-decoration:none;
+
+    font-size:20px;
+
+    font-weight:normal;
+
+}
+
+.gearModel{
+
+    font-size:30px;
+
+    font-weight:bold;
+
+    margin-top:0;
+
+    margin-bottom:5px;
+
+}
+
+.gearNote{
+
+    width:90%;
+
+    margin:16px auto;
+
+    font-size:14px;
+
+    line-height:1.6;
+
+    text-align:left;
+
+    color:#666;
 
 }
