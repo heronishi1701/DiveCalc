@@ -1,5 +1,4 @@
 User-agent: *
-
 Allow: /
 
 Sitemap: https://heronishi1701.github.io/DiveCalc/sitemap.xml
