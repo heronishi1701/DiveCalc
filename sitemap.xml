@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://heronishi1701.github.io/DiveCalc/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <url>
+    <loc>https://heronishi1701.github.io/DiveCalc/computers.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://heronishi1701.github.io/DiveCalc/gear.html</loc>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://heronishi1701.github.io/DiveCalc/masks.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://heronishi1701.github.io/DiveCalc/fins.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://heronishi1701.github.io/DiveCalc/snorkels.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://heronishi1701.github.io/DiveCalc/bcd.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://heronishi1701.github.io/DiveCalc/regulators.html</loc>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>
