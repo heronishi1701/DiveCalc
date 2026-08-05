@@ -34,21 +34,42 @@ jobs:
           echo '<?xml version="1.0" encoding="UTF-8"?>' > sitemap.xml
           echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' >> sitemap.xml
 
-          find . -type f -name "*.html" ! -path "./.git/*" | sort | while read -r file
+          is_disallowed() {
+            local p="$1"
+            [[ -f robots.txt ]] || return 1
+            while IFS= read -r line; do
+              line="${line%%#*}"
+              line="$(echo "$line" | xargs)"
+              [[ "$line" =~ ^Disallow:[[:space:]]*(.+)$ ]] || continue
+              rule="${BASH_REMATCH[1]}"
+              [[ "$rule" == "/" ]] && return 0
+              rule="${rule#/}"
+              [[ -z "$rule" ]] && continue
+              [[ "$p" == "$rule"* ]] && return 0
+            done < robots.txt
+            return 1
+          }
+
+          {
+            echo "./index.html"
+
+            find . -type f -name "*.html" \
+              ! -name "index.html" \
+              ! -path "./.git/*" |
+            sort
+          } | while read -r file
           do
             path="${file#./}"
             name="$(basename "$path")"
 
             case "$name" in
-              404.html|google*.html|google-site-verification*.html)
+              404.html|google*.html)
                 continue
                 ;;
             esac
 
-            if [[ -f robots.txt ]]; then
-              if grep -E '^Disallow:[[:space:]]*/?' robots.txt | sed 's/^Disallow:[[:space:]]*//' | grep -qx "/$path\|$path"; then
-                continue
-              fi
+            if is_disallowed "$path"; then
+              continue
             fi
 
             if [[ "$path" == "index.html" ]]; then
@@ -74,9 +95,7 @@ jobs:
             fi
 
             lastmod=$(git log -1 --format=%cI -- "$path" 2>/dev/null || true)
-            if [[ -z "$lastmod" ]]; then
-              lastmod=$(date -u +%Y-%m-%dT%H:%M:%SZ)
-            fi
+            [[ -z "$lastmod" ]] && lastmod=$(date -u +%Y-%m-%dT%H:%M:%SZ)
 
             printf '  <url>\n' >> sitemap.xml
             printf '    <loc>%s</loc>\n' "$url" >> sitemap.xml
